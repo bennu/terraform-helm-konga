@@ -47,7 +47,6 @@ resource helm_release konga {
   repository = format("%s/charts", path.module)
   # repository = "https://charts.bennu.cl"
   chart = "konga"
-  # version = "1.0.1"
   recreate_pods = var.recreate_pods
   namespace     = var.namespace
   set_sensitive {
