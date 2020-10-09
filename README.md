@@ -42,7 +42,9 @@ Some details about variables for this Kong module.
 
 #### Inputs
 | Name | Description | Type | Default | Required |
-|:----:|:-----------:|:----:|:-------:|:--------:|
+|------|-------------|------|---------|:--------:|
+| chart_name | Helm chart name for Konga | `string` | `"konga"` | no |
+| chart_repository | Helm chart repository for Konga | `string` | `""` | no |
 | cpu_limit | Cpu limit for pods in Konga deployment | `string` | `"600m"` | no |
 | cpu_request | Cpu request for pods in Konga deployment | `string` | `"250m"` | no |
 | db_host | PostgreSQL database hostname | `string` | n/a | yes |
