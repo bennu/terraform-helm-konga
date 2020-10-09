@@ -56,6 +56,13 @@ resource helm_release konga {
     name  = "ldap.bind_pass"
     value = var.ldap_bind_pass
   }
+  dynamic "set" {
+    for_each = var.chart_extra_set_configs
+    content {
+      name  = set.value["name"]
+      value = set.value["value"]
+    }
+  }
   values = [
     yamlencode(
       {
