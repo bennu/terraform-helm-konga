@@ -203,7 +203,7 @@ variable ldap_attr_email {
 }
 
 variable user_data {
-  description = ""
+  description = "User default data information used to autoconfigure when run Konga"
   type        = map
   default = {
     "username" : "devops",
