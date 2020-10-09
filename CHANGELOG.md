@@ -6,6 +6,7 @@
 
 ### Chore
 
+* added changelog
 * update README with new release values
 * update gitignore with changelogs
 * update README and some definitions on examples
