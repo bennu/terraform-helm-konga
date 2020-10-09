@@ -1,6 +1,6 @@
 locals {
   hostname = var.enable_ingress ? var.ingress_host : ""
-  name = var.name == "" ? format("konga-%s", random_string.konga_name.0.result) : var.name
+  name     = var.name == "" ? format("konga-%s", random_string.konga_name.0.result) : var.name
   node-data = [{
     "kong_admin_url" : "${var.kong_url}",
     "name" : "${var.kong_name}",
@@ -18,7 +18,7 @@ locals {
     }
   }
   user-default = [{
-    "username" : try(var.user_data["username"], "devops" ),
+    "username" : try(var.user_data["username"], "devops"),
     "email" : try(var.user_data["email"], "devops@mail.com"),
     "firstName" : try(var.user_data["firstName"], "Konga"),
     "lastName" : try(var.user_data["lastName"], "Admin"),
@@ -26,4 +26,5 @@ locals {
     "active" : true,
     "password" : try(var.user_data["password"], random_string.default_password.result),
   }]
+  chart_repository = var.chart_repository == "" ? format("%s/charts", path.module) : var.chart_repository
 }

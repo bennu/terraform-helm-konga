@@ -16,6 +16,18 @@ variable recreate_pods {
   default     = true
 }
 
+variable chart_repository {
+  description = "Helm chart repository for Kong"
+  type        = string
+  default     = ""
+}
+
+variable chart_name {
+  description = "Helm chart name for Kong"
+  type        = string
+  default     = "konga"
+}
+
 variable db_host {
   description = "PostgreSQL database hostname"
   type        = string

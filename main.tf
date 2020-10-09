@@ -42,11 +42,10 @@ EOF
 }
 
 resource helm_release konga {
-  name       = local.name
-  atomic     = true
-  repository = format("%s/charts", path.module)
-  # repository = "https://charts.bennu.cl"
-  chart = "konga"
+  name          = local.name
+  atomic        = true
+  repository    = local.chart_repository
+  chart         = var.chart_name
   recreate_pods = var.recreate_pods
   namespace     = var.namespace
   set_sensitive {
@@ -138,7 +137,6 @@ resource helm_release konga {
           }
         ]
         resources = local.resources
-        # runMigrations= true
       }
     )
   ]
