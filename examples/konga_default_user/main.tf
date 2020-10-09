@@ -1,5 +1,6 @@
 module konga {
-  source       = "../../"
+  source  = "bennu/kong/helm"
+  version = "0.0.5"
 
   db_host = var.db_host
   db_name = var.db_name
@@ -7,7 +8,7 @@ module konga {
   db_user = var.db_user
 
   # We can use another namespace to deploy all components, only need to secure that is exists.
-  namespace    = "konga"
+  namespace = "konga"
 
   # We can use another namespace to deploy all components, only need to secure that is exists.
   enable_ingress = true
@@ -17,8 +18,8 @@ module konga {
   # Default user is devops.
   # Here also we can modify another parameters as: "username", "email", "firstName", "lastName" and "password".
   user_data = {
-    "password"  = var.password,
-    "email" : "it@company.com",
+    "password" = var.password,
+    "email"    = "it@company.com",
   }
 }
 

@@ -45,6 +45,7 @@ Some details about variables for this Kong module.
 |:----:|:-----------:|:----:|:-------:|:--------:|
 | chart_name | Helm chart name for Konga | `string` | `"konga"` | no |
 | chart_repository | Helm chart repository for Konga | `string` | `""` | no |
+| chart_extra_set_configs | Using a list of maps as `[{"name"="foo", "value"="bar"},]` to create dynamics blocks of 'set' to merge with values | `list` | `[]` | no |
 | cpu_limit | Cpu limit for pods in Konga deployment | `string` | `"600m"` | no |
 | cpu_request | Cpu request for pods in Konga deployment | `string` | `"250m"` | no |
 | db_host | PostgreSQL database hostname | `string` | n/a | yes |

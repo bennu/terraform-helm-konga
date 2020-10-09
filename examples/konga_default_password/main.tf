@@ -1,5 +1,6 @@
 module konga {
-  source       = "../../"
+  source  = "bennu/kong/helm"
+  version = "0.0.5"
 
   db_host = var.db_host
   db_name = var.db_name
@@ -19,7 +20,7 @@ module konga {
   # For example here we can pass a username so when module deploy you can export password.
   # Default user is devops, so here use kongacontrol as username.
   user_data = {
-    "username"  = "kongacontrol",
+    "username" = "kongacontrol",
   }
 }
 
