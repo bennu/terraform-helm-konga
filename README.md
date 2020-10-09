@@ -70,7 +70,7 @@ Some details about variables for this Kong module.
 | ldap_group_attrs | List of attributes to pull from the LDAP server for groups | `string` | `"cn"` | no |
 | ldap_group_reg | Regular expression used to determine if a group should be considered as an admin user | `string` | `"^(admin\|konga)$"` | no |
 | ldap_group_search_base | Base DN used to search for groups | `string` | `"ou=groups,dc=com"` | no |
-| ldap_group_search_filter | Filter expression used to search for groups | `string` | `"(|(memberUid={{uid}})(memberUid={{uidNumber}})(sAMAccountName={{uid}}))"` | no |
+| ldap_group_search_filter | Filter expression used to search for groups | `string` | `"(\|(memberUid={{uid}})(memberUid={{uidNumber}})(sAMAccountName={{uid}}))"` | no |
 | ldap_host | LDAP Server connection as ldap:// | `string` | `"ldap://localhost:389"` | no |
 | ldap_user_attrs | List of attributes to pull from the LDAP server for users | `string` | `"sAMAccountName,uSNCreated,givenName,sn,mail"` | no |
 | ldap_user_search_base | Base DN used to search for users | `string` | `"ou=users,dc=com"` | no |
