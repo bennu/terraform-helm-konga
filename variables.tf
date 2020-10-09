@@ -17,13 +17,13 @@ variable recreate_pods {
 }
 
 variable chart_repository {
-  description = "Helm chart repository for Kong"
+  description = "Helm chart repository for Konga"
   type        = string
   default     = ""
 }
 
 variable chart_name {
-  description = "Helm chart name for Kong"
+  description = "Helm chart name for Konga"
   type        = string
   default     = "konga"
 }
