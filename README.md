@@ -21,7 +21,8 @@ An open source tool that enables you to manage your Kong API Gateway with ease
 #### Example main.tf
 ```hcl
 module "konga" {
-  source = "./"
+  source  = "bennu/kong/helm"
+  version = "0.0.5"
 
   db_host   = var.db_host
   db_name   = var.db_name
