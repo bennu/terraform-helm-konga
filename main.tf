@@ -44,7 +44,7 @@ EOF
 resource helm_release konga {
   name          = local.name
   atomic        = true
-  repository    = local.chart_repository
+  repository    = var.chart_repository
   chart         = var.chart_name
   recreate_pods = var.recreate_pods
   namespace     = var.namespace
@@ -143,7 +143,8 @@ resource helm_release konga {
             mountPath = "/etc/kong-user-data"
           }
         ]
-        resources = local.resources
+        resources     = local.resources
+        runMigrations = true
       }
     )
   ]
