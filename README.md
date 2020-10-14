@@ -6,17 +6,23 @@ An open source tool that enables you to manage your Kong API Gateway with ease
 
 ### Requirements
 | Name | Version |
-|------|---------|
-| Terraform | >= 0.13 |
-| Kubernetes | >= 1.16 |
-| PostgreSQL | >= 9.5 |
-| LDAP(optional) | - |
+|:----:|:-------:|
+| Terraform | `>= 0.13` |
+| Kubernetes | `>= 1.16` |
+| PostgreSQL | `>= 9.5` |
+| LDAP(optional) | `""` |
 
 ### Components
-| Name | Version | URL |
-|------|---------|-----|
-| Konga Chart | >= 0.14.9 | https://github.com/pantsel/konga |
-    
+Previously we used a copy of the full panzel chart in this module and update it locally, now we will use our chart with those modifications.
+
+We decide going to use our chart by default because they have the changes we need to be able to directly integrate an adapter for postgres or mysql.
+
+These changes have already been requested to be accepted in the official konga chart https://github.com/pantsel/konga/pull/622
+
+| Name | Repository | Version |
+|:----:|:----------:|:-------:|
+| Konga Chart | https://charts.bennu.cl | `>= 1.0.1` |
+
 
 #### Example main.tf
 ```hcl
@@ -86,6 +92,6 @@ Some details about variables for this Kong module.
 
 ## Outputs
 | Name | Description |
-|------|-------------|
+|:----:|:-----------:|
 | hostname | Konga hostname |
 | password | Password for default user, valid when LDAP is disable |

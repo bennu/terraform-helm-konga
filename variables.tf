@@ -19,7 +19,7 @@ variable recreate_pods {
 variable chart_repository {
   description = "Helm chart repository for Konga"
   type        = string
-  default     = ""
+  default     = "https://charts.bennu.cl"
 }
 
 variable chart_name {

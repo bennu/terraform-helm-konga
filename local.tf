@@ -26,5 +26,4 @@ locals {
     "active" : true,
     "password" : try(var.user_data["password"], random_string.default_password.result),
   }]
-  chart_repository = var.chart_repository == "" ? format("%s/charts", path.module) : var.chart_repository
 }
