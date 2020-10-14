@@ -1,11 +1,30 @@
 
-<a name="v0.0.5"></a>
-## [v0.0.5](https://gitlab.com/bennuteam/terraform-helm-konga/compare/v0.0.4...v0.0.5)
+<a name="v0.0.6"></a>
+## [v0.0.6](https://gitlab.com/bennuteam/terraform-helm-konga/compare/v0.0.5...v0.0.6)
 
-> 2020-10-09
+> 2020-10-14
 
 ### Chore
 
+* update VERSION v0.0.6
+* update version terraform examples
+* update README about use of custom konga chart as default
+
+### Feat
+
+* configure terraform to use custom konga chart as default
+* delete all files of local chart konga
+
+
+<a name="v0.0.5"></a>
+## [v0.0.5](https://gitlab.com/bennuteam/terraform-helm-konga/compare/v0.0.4...v0.0.5)
+
+> 2020-10-10
+
+### Chore
+
+* update VERSION tag
+* update changelog with release
 * added changelog
 * update README with new release values
 * update gitignore with changelogs
