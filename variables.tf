@@ -222,43 +222,33 @@ variable user_data {
 variable cpu_limit {
   description = "Cpu limit for pods in Konga deployment"
   type        = string
-  default     = "600m"
-
-  validation {
-    condition     = regex("^\\d+", var.cpu_limit) >= 600
-    error_message = "Minimum CPU limit should be 600m for Konga in Development environment."
-  }
+  default     = ""
 }
 
 variable cpu_request {
   description = "Cpu request for pods in Konga deployment"
   type        = string
-  default     = "250m"
+  default     = "150m"
 
   validation {
-    condition     = regex("^\\d+", var.cpu_request) >= 250
-    error_message = "Minimum CPU request should be 250m for Konga in Development environment."
+    condition     = regex("^\\d+", var.cpu_request) >= 150
+    error_message = "Minimum CPU request should be 150m for Konga in Development environment."
   }
 }
 
 variable memory_limit {
   description = "Memory limit for pods in Konga deployment"
   type        = string
-  default     = "400Mi"
-
-  validation {
-    condition     = regex("^\\d+", var.memory_limit) >= 400
-    error_message = "Minimum memory limit should be 400Mi for Konga in Development environment."
-  }
+  default     = ""
 }
 
 variable memory_request {
   description = "Memory request for pods in Konga deployment"
   type        = string
-  default     = "180Mi"
+  default     = "125Mi"
 
   validation {
-    condition     = regex("^\\d+", var.memory_request) >= 180
-    error_message = "Minimum memory request should be 180Mi for Konga in Development environment."
+    condition     = regex("^\\d+", var.memory_request) >= 125
+    error_message = "Minimum memory request should be 125Mi for Konga in Development environment."
   }
 }

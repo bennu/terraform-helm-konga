@@ -12,10 +12,10 @@ locals {
       memory = var.memory_request
       cpu    = var.cpu_request
     }
-    limits = {
-      memory = var.memory_limit
-      cpu    = var.cpu_limit
-    }
+    limits = merge(
+      var.cpu_limit == "" ? {} : { "cpu" = var.cpu_limit },
+      var.memory_limit == "" ? {} : { "memory" = var.memory_limit }
+    )
   }
   user-default = [{
     "username" : try(var.user_data["username"], "devops"),
