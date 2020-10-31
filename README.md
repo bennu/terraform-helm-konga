@@ -28,7 +28,7 @@ These changes have already been requested to be accepted in the official konga c
 ```hcl
 module "konga" {
   source  = "bennu/konga/helm"
-  version = "0.0.6"
+  version = "0.0.7"
 
   db_host   = var.db_host
   db_name   = var.db_name
@@ -53,8 +53,8 @@ Some details about variables for this Kong module.
 | chart_name | Helm chart name for Konga | `string` | `"konga"` | no |
 | chart_repository | Helm chart repository for Konga | `string` | `"https://charts.bennu.cl"` | no |
 | chart_extra_set_configs | Using a list of maps as `[{"name"="foo", "value"="bar"},]` to create dynamics blocks of 'set' to merge with values | `list` | `[]` | no |
-| cpu_limit | Cpu limit for pods in Konga deployment | `string` | `"600m"` | no |
-| cpu_request | Cpu request for pods in Konga deployment | `string` | `"250m"` | no |
+| cpu_limit | Cpu limit for pods in Konga deployment | `string` | `""` | no |
+| cpu_request | Cpu request for pods in Konga deployment | `string` | `"150m"` | no |
 | db_host | PostgreSQL database hostname | `string` | n/a | yes |
 | db_name | PostgreSQL database name | `string` | n/a | yes |
 | db_pass | PostgreSQL database password | `string` | n/a | yes |
@@ -83,8 +83,8 @@ Some details about variables for this Kong module.
 | ldap_user_attrs | List of attributes to pull from the LDAP server for users | `string` | `"sAMAccountName,uSNCreated,givenName,sn,mail"` | no |
 | ldap_user_search_base | Base DN used to search for users | `string` | `"ou=users,dc=com"` | no |
 | ldap_user_search_filter | The filter expression used to search for users | `string` | `"sAMAccountName={{username}}"` | no |
-| memory_limit | Memory limit for pods in Konga deployment | `string` | `"400Mi"` | no |
-| memory_request | Memory request for pods in Konga deployment | `string` | `"180Mi"` | no |
+| memory_limit | Memory limit for pods in Konga deployment | `string` | `""` | no |
+| memory_request | Memory request for pods in Konga deployment | `string` | `"125Mi"` | no |
 | name | Value for konga name in pods | `string` | `""` | no |
 | namespace | Namespace where resources are deployed | `string` | `"default"` | no |
 | recreate_pods | Used for restart pods when some changes in configmap are doing for Konga | `bool` | `true` | no |
