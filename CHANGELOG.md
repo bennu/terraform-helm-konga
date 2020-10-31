@@ -1,4 +1,16 @@
 
+<a name="v0.0.7"></a>
+## [v0.0.7](https://gitlab.com/bennuteam/terraform-helm-konga/compare/v0.0.6...v0.0.7)
+
+> 2020-10-31
+
+### Chore
+
+* update values on default resources requests
+* change limits on pod resources, default is disable
+* update CHANGELOG
+
+
 <a name="v0.0.6"></a>
 ## [v0.0.6](https://gitlab.com/bennuteam/terraform-helm-konga/compare/v0.0.5...v0.0.6)
 
