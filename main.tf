@@ -143,7 +143,7 @@ resource helm_release konga {
             mountPath = "/etc/kong-user-data"
           }
         ]
-        resources     = local.resources
+        resources     = var.resources
         runMigrations = true
       }
     )

@@ -219,36 +219,8 @@ variable user_data {
   }
 }
 
-variable cpu_limit {
-  description = "Cpu limit for pods in Konga deployment"
-  type        = string
-  default     = ""
-}
-
-variable cpu_request {
-  description = "Cpu request for pods in Konga deployment"
-  type        = string
-  default     = "150m"
-
-  validation {
-    condition     = regex("^\\d+", var.cpu_request) >= 150
-    error_message = "Minimum CPU request should be 150m for Konga in Development environment."
-  }
-}
-
-variable memory_limit {
-  description = "Memory limit for pods in Konga deployment"
-  type        = string
-  default     = ""
-}
-
-variable memory_request {
-  description = "Memory request for pods in Konga deployment"
-  type        = string
-  default     = "125Mi"
-
-  validation {
-    condition     = regex("^\\d+", var.memory_request) >= 125
-    error_message = "Minimum memory request should be 125Mi for Konga in Development environment."
-  }
+variable resources {
+  description = "Define the limits and/or requests on pod resources"
+  type        = map
+  default     = {}
 }
