@@ -7,16 +7,6 @@ locals {
     "type" : "default"
   }]
   password = var.enable_ldap ? "use_ldap" : try(var.user_data["password"], random_string.default_password.result)
-  resources = {
-    requests = {
-      memory = var.memory_request
-      cpu    = var.cpu_request
-    }
-    limits = merge(
-      var.cpu_limit == "" ? {} : { "cpu" = var.cpu_limit },
-      var.memory_limit == "" ? {} : { "memory" = var.memory_limit }
-    )
-  }
   user-default = [{
     "username" : try(var.user_data["username"], "devops"),
     "email" : try(var.user_data["email"], "devops@mail.com"),
