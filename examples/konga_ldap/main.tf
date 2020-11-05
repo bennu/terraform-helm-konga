@@ -1,6 +1,6 @@
 module konga {
   source  = "bennu/konga/helm"
-  version = "0.0.7"
+  version = "0.0.8"
 
   db_host = var.db_host
   db_name = var.db_name
