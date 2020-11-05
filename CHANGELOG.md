@@ -1,4 +1,16 @@
 
+<a name="v0.0.8"></a>
+## [v0.0.8](https://gitlab.com/bennuteam/terraform-helm-konga/compare/v0.0.7...v0.0.8)
+
+> 2020-11-04
+
+### Chore
+
+* update VERSION v0.0.8 tag
+* update README , examples information with release
+* change resources variables for konga pod
+
+
 <a name="v0.0.7"></a>
 ## [v0.0.7](https://gitlab.com/bennuteam/terraform-helm-konga/compare/v0.0.6...v0.0.7)
 
@@ -6,9 +18,16 @@
 
 ### Chore
 
+* update CHANGELOG
+* update VERSION v0.0.7
 * update values on default resources requests
 * change limits on pod resources, default is disable
 * update CHANGELOG
+
+### Docs
+
+* update README with version
+* update version terraform examples
 
 
 <a name="v0.0.6"></a>
