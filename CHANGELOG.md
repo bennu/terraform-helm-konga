@@ -1,4 +1,13 @@
 
+<a name="v0.0.9"></a>
+## [v0.0.9](https://gitlab.com/bennuteam/terraform-helm-konga/compare/v0.0.8...v0.0.9)
+
+> 2020-12-08
+
+### Chore
+
+* fix deprecated interpolation
+
 <a name="v0.0.8"></a>
 ## [v0.0.8](https://gitlab.com/bennuteam/terraform-helm-konga/compare/v0.0.7...v0.0.8)
 
