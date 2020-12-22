@@ -113,6 +113,12 @@ variable konga_tag {
   default     = "0.14.9"
 }
 
+variable reg_cred {
+  description = "Registry secret credential"
+  type        = string
+  default     = ""
+}
+
 variable enable_ldap {
   description = "Enable LDAP connection for Konga"
   type        = bool

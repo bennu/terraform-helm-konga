@@ -21,7 +21,7 @@ These changes have already been requested to be accepted in the official konga c
 
 | Name | Repository | Version |
 |:----:|:----------:|:-------:|
-| Konga Chart | https://charts.bennu.cl | `>= 1.0.1` |
+| Konga Chart | https://charts.bennu.cl | `>= 1.0.2` |
 
 
 #### Example main.tf
