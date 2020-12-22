@@ -115,8 +115,8 @@ variable konga_tag {
 
 variable reg_cred {
   description = "Registry secret credential"
-  type        = string
-  default     = ""
+  type        = list
+  default     = []
 }
 
 variable enable_ldap {
