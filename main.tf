@@ -67,8 +67,9 @@ resource helm_release konga {
     yamlencode(
       {
         image = {
-          repository = var.konga_image
-          tag        = var.konga_tag
+          repository  = var.konga_image
+          tag         = var.konga_tag
+          pullSecrets = var.reg_cred
         }
         config = {
           db_adapter      = "postgres"
