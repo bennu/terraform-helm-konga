@@ -1,11 +1,6 @@
 locals {
   hostname = var.enable_ingress ? var.ingress_host : ""
   name     = var.name == "" ? format("konga-%s", random_string.konga_name.0.result) : var.name
-  node-data = [{
-    "kong_admin_url" : var.kong_url,
-    "name" : var.kong_name,
-    "type" : "default"
-  }]
   password = var.enable_ldap ? "use_ldap" : try(var.user_data["password"], random_string.default_password.result)
   user-default = [{
     "username" : try(var.user_data["username"], "devops"),

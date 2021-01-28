@@ -23,7 +23,7 @@ resource kubernetes_secret node_data {
 
   data = {
     "node-data" = <<EOF
-        module.exports = ${jsonencode(local.node-data)}
+        module.exports = ${jsonencode(var.kong_endpoints)}
 EOF
   }
 }
