@@ -84,21 +84,10 @@ variable ingress_path {
   default     = "/"
 }
 
-variable kong_name {
-  description = "Kong name connection"
-  type        = string
-  default     = "kong"
-}
-
-variable kong_url {
-  description = "Kong URI connection"
-  type        = string
-  default     = "http://admin.local:8001"
-
-  validation {
-    condition     = can(regex("^https?://.+:\\d+", var.kong_url))
-    error_message = "URI for LDAP begin with http[s]://hostname:port ."
-  }
+variable kong_endpoints {
+  description = "List of Kong endpoints connections used in Konga UI, Example: `[{\"kong_admin_url\"=\"http://admin.local:8001\", \"name\"=\"kong-admin\", \"type\"=\"default\"},]`"
+  type        = list
+  default     = []
 }
 
 variable konga_image {
@@ -120,7 +109,7 @@ variable reg_cred {
 }
 
 variable enable_ldap {
-  description = "Enable LDAP connection for Konga"
+  description = "Enable LDAP connection for Konga. We can use configuration defined on https://github.com/pantsel/konga/blob/master/docs/LDAP.md if enable LDAP"
   type        = bool
   default     = false
 }
@@ -137,9 +126,9 @@ variable ldap_host {
 }
 
 variable ldap_bind_dn {
-  description = "BIND DN to konga should use to login to LDAP to search users"
+  description = "BIND DN to konga should use to login to LDAP to search users. Example: `\"cn=konga,ou=admin,dc=example,dc=com\"`"
   type        = string
-  default     = "cn=konga,ou=admin,dc=example,dc=com"
+  default     = "dc=example,dc=com"
 }
 
 variable ldap_bind_pass {
@@ -149,69 +138,69 @@ variable ldap_bind_pass {
 }
 
 variable ldap_user_search_base {
-  description = "Base DN used to search for users"
+  description = "Base DN used to search for users. Example: `\"ou=users,dc=com\"`"
   type        = string
-  default     = "ou=users,dc=com"
+  default     = null
 }
 
 variable ldap_user_search_filter {
-  description = "The filter expression used to search for users"
+  description = "The filter expression used to search for users. Example: `\"sAMAccountName={{username}}\"`"
   type        = string
-  default     = "sAMAccountName={{username}}"
+  default     = null
 }
 
 variable ldap_user_attrs {
-  description = "List of attributes to pull from the LDAP server for users"
+  description = "List of attributes to pull from the LDAP server for users. Example: `\"sAMAccountName,uSNCreated,givenName,sn,mail\"`"
   type        = string
-  default     = "sAMAccountName,uSNCreated,givenName,sn,mail"
+  default     = null
 }
 
 variable ldap_group_search_base {
-  description = "Base DN used to search for groups"
+  description = "Base DN used to search for groups. Example: `\"ou=groups,dc=com\"`"
   type        = string
-  default     = "ou=groups,dc=com"
+  default     = null
 }
 
 variable ldap_group_search_filter {
-  description = "Filter expression used to search for groups"
+  description = "Filter expression used to search for groups. Example: `\"(|(memberUid={{uid}})(memberUid={{uidNumber}})(sAMAccountName={{uid}}))\"`"
   type        = string
-  default     = "(|(memberUid={{uid}})(memberUid={{uidNumber}})(sAMAccountName={{uid}}))"
+  default     = null
 }
 
 variable ldap_group_attrs {
-  description = "List of attributes to pull from the LDAP server for groups"
+  description = "List of attributes to pull from the LDAP server for groups. Example: `\"cn\"`"
   type        = string
-  default     = "cn"
+  default     = null
 }
 
 variable ldap_group_reg {
-  description = "Regular expression used to determine if a group should be considered as an admin user"
+  description = "Regular expression used to determine if a group should be considered as an admin user. Example: `\"^(admin|konga)$ \"`"
   type        = string
-  default     = "^(admin|konga)$"
+  default     = null
 }
 
 variable ldap_attr_username {
-  description = "LDAP attribute name that should be used as the konga username"
+  description = "LDAP attribute name that should be used as the konga username. Example: `\"sAMAccountName\"`"
   type        = string
-  default     = "sAMAccountName"
+  default     = null
 }
 
 variable ldap_attr_firstname {
-  description = "LDAP attribute name that should be used as the konga user's first name"
+  description = "LDAP attribute name that should be used as the konga user's first name. Example: `\"givenName\"`"
   type        = string
-  default     = "givenName"
+  default     = null
 }
 
 variable ldap_attr_lastname {
-  description = "LDAP attribute name that should be used as the konga user's last name"
+  description = "LDAP attribute name that should be used as the konga user's last name. Example: `\"sn\"`"
   type        = string
-  default     = "sn"
+  default     = null
 }
 
 variable ldap_attr_email {
-  description = "LDAP attribute name that should be used as the konga user's email address"
+  description = "LDAP attribute name that should be used as the konga user's email address. Example: `\"mail\"`"
   type        = string
-  default     = "mail"
+  default     = null
 }
 
 variable user_data {
