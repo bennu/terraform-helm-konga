@@ -107,9 +107,9 @@ Some details about variables for this Kong module.
 | ldap_bind_dn | BIND DN to konga should use to login to LDAP to search users. Example: `"cn=konga,ou=admin,dc=example,dc=com"` | `string` | `"dc=example,dc=com"` | no |
 | ldap_bind_pass | BIND PASS for the user konga will use to search for users | `string` | `"secret"` | no |
 | ldap_group_attrs | List of attributes to pull from the LDAP server for groups. Example: `"cn"` | `string` | `null` | no |
-| ldap_group_reg | Regular expression used to determine if a group should be considered as an admin user. Example: `"^(admin|konga)$ "` | `string` | `null` | no |
+| ldap_group_reg | Regular expression used to determine if a group should be considered as an admin user. Example: `"^(admin\|konga)$ "` | `string` | `null` | no |
 | ldap_group_search_base | Base DN used to search for groups. Example: `"ou=groups,dc=com"` | `string` | `null` | no |
-| ldap_group_search_filter | Filter expression used to search for groups. Example: `"(|(memberUid={{uid}})(memberUid={{uidNumber}})(sAMAccountName={{uid}}))"` | `string` | `null` | no |
+| ldap_group_search_filter | Filter expression used to search for groups. Example: `"(\|(memberUid={{uid}})(memberUid={{uidNumber}})(sAMAccountName={{uid}}))"` | `string` | `null` | no |
 | ldap_host | LDAP Server connection as ldap:// | `string` | `"ldap://localhost:389"` | no |
 | ldap_user_attrs | List of attributes to pull from the LDAP server for users. Example: `"sAMAccountName,uSNCreated,givenName,sn,mail"` | `string` | `null` | no |
 | ldap_user_search_base | Base DN used to search for users. Example: `"ou=users,dc=com"` | `string` | `null` | no |
