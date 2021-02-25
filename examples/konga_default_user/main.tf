@@ -1,5 +1,5 @@
 module konga {
-  source  = "../../"
+  source = "../../"
 
   db_host = var.db_host
   db_name = var.db_name
@@ -35,5 +35,5 @@ variable password {}
 
 output password {
   sensitive = true
-  value = module.konga.password
+  value     = module.konga.password
 }

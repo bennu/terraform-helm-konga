@@ -1,12 +1,19 @@
 module konga {
-  source  = "../../"
+  source = "../../"
 
   db_host   = var.db_host
   db_name   = var.db_name
   db_pass   = var.db_pass
   db_user   = var.db_user
   namespace = "management"
-  kong_url  = "http://kong.kong.svc:8001"
+
+  kong_endpoints = [
+    {
+      "kong_admin_url" = "http://kong.kong.svc:8001",
+      "name"           = "kong-admin",
+      "type"           = "default"
+    },
+  ]
 
   enable_ingress = true
   ingress_host   = "konga.bennu.cl"
