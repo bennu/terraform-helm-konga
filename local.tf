@@ -11,4 +11,5 @@ locals {
     "active" : true,
     "password" : try(var.user_data["password"], random_string.default_password.result),
   }]
+  konga_image = var.registry == "" ? var.konga_image : format("%s/%s", var.registry, var.konga_image)
 }

@@ -67,7 +67,7 @@ resource helm_release konga {
     yamlencode(
       {
         image = {
-          repository  = var.konga_image
+          repository  = local.konga_image
           tag         = var.konga_tag
           pullSecrets = var.reg_cred
         }
