@@ -219,3 +219,9 @@ variable resources {
   type        = map
   default     = {}
 }
+
+variable registry {
+  description = "Custom registry host for be used in all the containers"
+  type        = string
+  default     = ""
+}

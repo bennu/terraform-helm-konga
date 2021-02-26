@@ -1,4 +1,18 @@
 
+<a name="v0.1.1"></a>
+## [v0.1.1](https://gitlab.com/bennuteam/terraform-helm-konga/compare/v0.1.0...v0.1.1) (2021-02-25)
+
+### Chore
+
+* update VERSION v0.1.1
+* update example to use kong_endpoints
+* added registry variable to use custom registry hots
+
+### Merge Requests
+
+* Merge branch '22-added-a-variable-to-configure-a-custom-registry' into '23-release-v0-1-1'
+
+
 <a name="v0.1.0"></a>
 ## [v0.1.0](https://gitlab.com/bennuteam/terraform-helm-konga/compare/v0.0.11...v0.1.0) (2021-01-28)
 
@@ -8,12 +22,19 @@
 
 ### Docs
 
+* fix typo on values for readme
+* update changelog file
 * update readme to show updated values
 * fix examples to call local module
 
 ### Feat
 
 * update module to able use kong endpoints list
+
+### Merge Requests
+
+* Merge branch '20-release-v0-1-0' into 'master'
+* Merge branch '20-release-v0-1-0' into 'master'
 
 
 <a name="v0.0.11"></a>

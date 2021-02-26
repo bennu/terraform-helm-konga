@@ -1,13 +1,18 @@
 module konga {
-  source  = "../../"
+  source = "../../"
 
   db_host = var.db_host
   db_name = var.db_name
   db_pass = var.db_pass
   db_user = var.db_user
-  
-  kong_name = "konga"
-  kong_url  = "http://kong:8001"
+
+  kong_endpoints = [
+    {
+      "kong_admin_url" = "http://kong:8001",
+      "name"           = "konga",
+      "type"           = "default"
+    },
+  ]
 
   # When enable_ingress is true konga is expose whitin an ingress controller, is possible to use annotations also.
   # So, defining hostname with ingress_host value.
@@ -42,5 +47,5 @@ variable ldap_bind_pass {}
 # Here we can show a beauty value :)
 output password {
   sensitive = true
-  value = module.konga.password
+  value     = module.konga.password
 }

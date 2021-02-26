@@ -118,6 +118,7 @@ Some details about variables for this Kong module.
 | namespace | Namespace where resources are deployed | `string` | `"default"` | no |
 | recreate_pods | Used for restart pods when some changes in configmap are doing for Konga | `bool` | `true` | no |
 | reg_cred | Registry secret credential | `list` | `[]` | no |
+| registry | Custom registry host for be used in all the containers | `string` | `""` | no |
 | resources | Define the limits and/or requests on pod resources | `map` | `{}` | no |
 | user_data | User default data information used to autoconfigure when run Konga | `map` | <pre>{<br>  "email": "devops@mail.com",<br>  "firstName": "Admin",<br>  "lastName": "Konga",<br>  "username": "devops"<br>}</pre> | no |
 
